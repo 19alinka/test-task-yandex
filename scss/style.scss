@@ -1,0 +1,694 @@
+@import "reset.scss";
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Merriweather&display=swap');
+
+:root {
+  --fontM: 'Merriweather', serif;
+  --fontG: 'Golos Text', sans-serif;
+  --red-color: #F54932;
+  --gray-color: #595653;
+  --background-color: #1F1F1F;
+  --background-opacity: rgba(255,255,0,0);
+  --background-opacity2: rgba(255,255,255,0.8);
+  --text-color: #313131;
+  --white-color: #FFF;
+  --blue-color: #3057A2;
+  --yellow-color: #FBCE51;
+  --border: 2px solid var(--background-color);
+  --border-table: 2px solid #D0D0D0;
+  --arrow-background: #D9D9D9;
+  --footer-backround: #E9DED4;
+}
+
+@mixin font($ff, $c, $fw, $lh, $tt, $minf, $d, $alh) {
+  font-family: $ff;
+  color: $c;
+  font-weight: $fw;
+  line-height: $lh;
+  text-transform: $tt;
+  font-size: calc(#{$minf} + #{$d} * (100vw / 1366));
+  @media (max-width: 767px) {
+    font-size: $minf;
+    line-height: $alh;
+  }
+}
+
+@mixin button($bac, $bor, $c, $btw, $hb, $hc) {
+  border-radius: 66px;
+  width: 263px;
+  height: 72px;
+  background: var($bac);
+  border: var($bor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include font(var(--fontG), var($c), 500, 130%, none, 16px, 0, 130%);
+  .button-text {
+    width: $btw;
+    @media (max-width: 767px) {
+      width: 100%;
+    }
+  }
+  &:hover {
+    background: var($hb);
+    color: var($hc);
+    transition: 0.7s;
+  }
+  @media (max-width: 767px) {
+    width: 100%;
+    height: 47px;
+  }
+  @media (max-width: 343px) {
+    font-size: 14px;
+  }
+}
+
+@mixin number($n, $l) {
+  content: "#{$n}";
+  @include font(var(--fontG), var(--text-color), 600, 120%, none, 20px, 0, 120%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--white-color);
+  position: absolute;
+  left: $l;
+}
+
+@mixin item($name, $n) {
+  grid-area: $name;
+  position: relative;
+  .stages-p::before {
+    @include number($n, 20px);
+  }
+}
+
+@mixin slick {
+  .slick-list {
+    overflow: hidden;
+  }
+  .slick-track {
+    display: flex;
+  }
+}
+
+@mixin click-arrow($t, $fs) {
+  position: absolute;
+  top: $t;
+  font-size: $fs;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--text-color);
+  &:hover {
+    background-color: var(--yellow-color);
+    transition: 0.7s;
+  }
+}
+
+@mixin slick-prev-next($l, $url, $t, $bl) {
+  left: $l;
+  &::before {
+    content: $url;
+    position: absolute;
+    top: $t;
+    left: $bl;
+  }
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.container {
+  @media (min-width: 1366px) {
+    max-width: 1222px;
+  }
+  max-width: 89.524%;
+  margin: 0 auto;
+  position: relative;
+}
+
+//Общий класс для голубого текста
+.blue-text {
+  @include font(var(--fontG), var(--blue-color), 400, 120%, none, 20px, 0, 120%);
+}
+
+//Заголовок
+.header {
+  background: url(/img/frame.png);
+  background-size: contain;
+  height: 710px;
+  @media (max-width: 767px) {
+    height: 750px;
+  }
+  &__logo {
+    .logo-p {
+      display: flex;
+      align-items: center;
+      @include font(var(--fontG), var(--gray-color), 700, 17.983px, uppercase, 14.418px, 2.233, 15.571px);
+      padding-top: 26px;
+      @media (max-width: 767px) {
+        padding-top: 18px;
+      }
+      &::before {
+        content: "";
+        background-image: url(/img/Vector.png);
+        background-repeat: repeat;
+        background-size: contain;
+        width: 91px;
+        height: 31.183px;
+        margin-right: 6.35px;
+        @media (max-width: 767px) {
+          width: 76.5px;
+          height: 27px;
+          margin-right: 5.5px;
+        }
+      }
+    }
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 62px;
+    max-width: 542px;
+    @media (max-width: 767px) {
+      max-width: 335px;
+      margin-top: 40px;
+    }
+    .content-p {
+      @media (min-width: 1367px) {
+        font-size: 60px;
+      }
+      @include font(var(--fontM), var(--text-color), 400, 110%, uppercase, 36px, 24, 110%);
+      @media (max-width: 343px) {
+        font-size: 30px;
+      }
+    }
+    .p1 {
+      text-align: center;
+    }
+    .p2 {
+      text-align: end;
+    }
+    .content-p2 {
+      @include font(var(--fontG), var(--text-color), 400, 130%, none, 18px, 0, 130%);
+      text-align: center;
+      margin-top: 24px;
+      @media (max-width: 767px) {
+        text-align: start;
+      }
+      @media (max-width: 343px) {
+        font-size: 16px;
+      }
+    }
+  }
+  &__button {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 40px;
+    z-index: 5;
+    @media (max-width: 767px) {
+      flex-direction: column;
+      margin-top: 32px;
+    }
+    .button1 {
+      @include button(--background-color, none, --white-color, 150px, --yellow-color, --text-color);
+    }
+    .button2 {
+      @include button(--background-opacity, --border, --text-color, 150px, --background-color, --white-color);
+      @media (max-width: 767px) {
+        background: var(--background-opacity2);
+        border: var(--background-opacity2);
+      }
+    }
+  }
+  &__img {
+    position: absolute;   
+    top: 0;
+    left: -370px;
+    @media (max-width: 767px) {
+      top: 440px;
+      left: -370px;
+    }
+    .img-city {
+      max-width: 1950px;
+      max-height: 750px;
+      @media (max-width: 767px) {
+        width: 800px;
+        height: 310px;
+      }
+    }
+  }
+}
+
+//Бегущая строка
+.marquee {
+  background: var(--red-color);
+  @include font(var(--fontM), var(--white-color), 400, 110%, uppercase, 16px, 6, 110%);
+  &__items {
+    width: 150%;
+    display: flex;
+    gap: 10px;
+    white-space: nowrap;
+    animation: marquee 25s linear infinite;
+  }
+  &__item {
+    padding: 18px 12px;
+    position: relative;
+    @media (max-width: 767px) {
+      padding: 10px 12px;
+    }
+    &:nth-child(n+2) .marquee-p::before {
+      content: "";
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--white-color);
+      top: 43%;
+      left: -9px;
+    }
+  }
+  @mixin marquee ($t) {
+    @keyframes marquee {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX($t);
+      }
+    }
+  }
+  @include marquee(-110%);
+  @media (max-width: 1024px) {
+    @include marquee(-150%);
+  }  
+}
+
+//Блок с информацией
+.info {
+  margin-top: 56px;
+  @media (max-width: 767px) {
+    margin-top: 48px;
+  }
+}
+.red-text {
+  color: var(--red-color);
+}
+.red-line {
+  text-decoration: line-through;
+  text-decoration-color: var(--red-color);
+  margin-right: 10px;
+}
+.p {
+  @include font(var(--fontM), var(--text-color), 400, 135%, uppercase, 28px, 8, 135%); 
+    @media (min-width: 1367px) {
+      font-size: 36px;
+    }
+}
+.info-title {
+  display: flex;
+  align-items: center;
+  position: relative;
+  gap: 64px;
+  &-p {
+    display: flex;
+    flex-direction: column;
+    @media (max-width: 1024px) {
+      .indent {
+        margin-top: 270px;
+      }
+    } 
+  }    
+  &-img {
+    border-radius: 50%;
+    width: 394px;
+    @media (max-width: 1024px) {
+      position: absolute;
+      width: 335px;
+      top: 25%;
+    }
+  }
+}
+.info-content {
+  display: flex;
+  margin-top: 64px;
+  gap: 15px;
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
+  &-img {
+    width: 609px;
+    height: 528px;
+    margin-top: -45px;
+    @media (max-width: 1024px){
+      width: 70%;
+      height: 60%;
+      align-self: center;
+    }
+    @media (max-width: 425px) {
+      width: 90%;
+    }
+  }
+  &-main {
+    display: flex;
+    flex-direction: column;
+  }
+  &-items {
+    margin-top: 46px;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(5, auto);
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(1, auto);
+      grid-template-rows: repeat(10, auto);
+    }
+    .info-content-title {
+      @include font(var(--fontG), var(--text-color), 400, 120%, none, 20px, 0, 120%);
+      padding: 16px 0px; 
+      border-bottom: var(--border-table);
+      border-right: var(--border-table);
+      @media (max-width: 768px) {
+        border-bottom: none;
+        border-right: none;
+        padding: 16px 0 12px 0;
+      }
+    }
+    .info-content-text {
+      @include font(var(--fontG), var(--text-color), 600, 120%, none, 20px, 0, 120%);
+      padding: 16px 16px;
+      border-bottom: var(--border-table);
+      @media (max-width: 768px) {
+        padding: 0 0 16px 0;
+      }
+    }
+    .no-no {
+      padding-top: 0;
+    }
+    .no {
+      border-bottom: none;
+      padding-bottom: 0;
+      @media (max-width: 768px) {
+        padding-bottom: 12px;
+      }
+    }
+  }
+  .blue-text {
+    margin-top: 48px;
+  }
+}
+
+//Блок этапы преображения
+.stages {
+  margin-top: 200px;
+  @media (max-width: 1024px) {
+    margin-top: 120px;
+  }
+  &__h1 {
+    @media (min-width: 1367px) {
+      @include font(var(--fontM), var(--text-color), 400, 120%, uppercase, 64px, 0, 120%);
+    }
+    @include font(var(--fontM), var(--text-color), 400, 120%, uppercase, 36px, 28, 120%);
+    @media (max-width: 374px) {
+      font-size: 30px;
+    }
+    width: 850px;
+    @media (max-width: 900px) {
+      width: 100%;
+    }
+    .blue-text {
+      display: inline-block;
+      width: 300px;
+      vertical-align: 25%;
+    }
+  }
+  &__img {
+    position: absolute;
+    width: 374.797px;
+    top: 340px;
+    right: -60px;
+    z-index: 2;
+    @media (max-width: 876px) {
+      top: 360px;
+    }
+    @media (max-width: 767px) {
+      top: 320px;
+    }
+    @media (max-width: 610px) {
+      width: 317.2px;
+      top: 130px;
+      right: -10%; 
+    }
+    @media (max-width: 584px) {
+      top: 170px;
+    }
+    @media (max-width: 320px) {
+      width: 280px;
+      top: 190px;
+    }
+  }
+  .slider {
+    display: none;
+  }
+  &__items {
+    margin-top: 54px;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+    gap: 20px;
+    grid-template-areas: 
+    'first second third'
+    'fourth fifth third'
+    'sixth seventh seventh';
+  }
+  &__item {
+    background-image: url(/img/frame.png);
+    background-color: rgba(238,228,211,0.9);
+    padding: 20px 20px 20px 72px;
+  }
+  &__item:nth-child(1) {
+    @include item(first, 1);
+  }
+  &__item:nth-child(2) {
+    @include item(second, 2);
+  }
+  &__item:nth-child(3) {
+    @include item(third, 3);
+  }
+  &__item:nth-child(4) {
+    @include item(fourth, 4);
+  }
+  &__item:nth-child(5) {
+    @include item(fifth, 5);
+  }
+  &__item:nth-child(6) {
+    @include item(sixth, 6);
+  }
+  &__item:nth-child(7) {
+    @include item(seventh, 7);
+    padding-right: 300px;
+  }
+  &-p {
+    @include font(var(--fontG), var(--text-color), 500, 120%, none, 20px, 0, 120%);
+  }
+  @media (max-width: 1330px) {
+    @media (max-width: 610px) {
+      .container {
+        height: 716px;
+      }
+    }
+    &__items {
+      display: none;
+    }
+    .slider {
+      display: block;
+      margin-top: 54px;
+      position: relative;
+      @include slick();
+      @media (max-width: 610px) {
+        margin-top: 120px;
+      }
+      .slick-arrow {
+        @include click-arrow(calc(100% - 23px), 0);
+      }
+      .slick-arrow.slick-disabled {
+        background-color: var(--arrow-background);
+        transition: 0.7s;
+        cursor: inherit;
+      }
+      .slick-prev {
+        @include slick-prev-next(calc(50% - 90px), url(/img/arrow-previous.png), 22%, 30%);
+      }
+      .slick-next {
+        @include slick-prev-next(calc(50% + 55px), url(/img/arrow-next.png), 23%, 40%);
+      }
+    }
+    .slider__item {
+      background-image: url(/img/frame.png);
+      width: 335px;
+      height: 350px;
+      padding: 62px 5px 0 72px;
+      &-p {
+        @include font(var(--fontG), var(--text-color), 500, 120%, none, 18px, 0, 120%);
+        width: 80%;
+        margin-bottom: 28px;
+        position: relative;
+      }
+      .sip1::before {
+        @include number(1, -50px);
+      }
+      .sip2::before {
+        @include number(2, -50px);
+      }
+      .sip3::before {
+        @include number(3, -50px);
+      }
+      .sip4::before {
+        @include number(4, -50px);
+      }
+      .sip5::before {
+        @include number(5, -50px);
+      }
+      .sip6::before {
+        @include number(6, -50px);
+      }
+      .sip7::before {
+        @include number(7, -50px);
+      }
+    }
+    .slick-dots {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 41px;
+      li button {
+        font-size: 0;
+        width: 10px;
+        height: 10px;
+        background-color: var(--arrow-background);
+        border-radius: 50%;
+      }
+      li.slick-active button {
+        background-color: var(--text-color);
+      }
+    }
+  }
+}
+
+//Блок с участниками
+.participants {
+  margin-top: 200px;
+  @media (max-width: 1330px) {
+    margin-top: 100px;
+  }
+  &__h2 {
+    @media (min-width: 1367px) {
+      @include font(var(--fontM), var(--text-color), 400, 120%, uppercase, 64px, 0, 120%);
+    }
+    @include font(var(--fontM), var(--text-color), 400, 120%, uppercase, 36px, 28, 120%);
+    margin-bottom: 31px;
+  }
+  &__items {
+    @include slick();
+    position: relative;
+    height: 473px;
+    margin-bottom: 140px;
+    @media (max-width: 790px) {
+      margin-bottom: 186px;
+    }
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__img {
+    @media (max-width: 374px) {
+      width: 90%;
+    }
+  }
+  &__h3 {
+    @include font(var(--fontG), var(--text-color), 600, 120%, none, 24px, 0, 120%);
+    margin: 22px 0 6px 0;
+  }
+  &__p {
+    @include font(var(--fontG), var(--text-color), 400, 120%, none, 20px, 0, 120%);
+    opacity: 0.6;
+    margin-bottom: 20px; 
+  }
+  &__button {
+    border: 2px solid var(--blue-color);
+    padding: 12px;
+    border-radius: 62px;
+    background-color: var(--white-color);
+    &:hover {
+      background-color: var(--blue-color);
+      color: var(--white-color);
+      transition: 0.7s;
+    }
+  }
+  .slick-arrow {
+    @include click-arrow(-90px, 0);
+    @media (max-width: 1139px) {
+      top: calc(100% + 30px);
+    }
+  }
+  .slick-prev {
+    @include slick-prev-next(calc(100% - 130px), url(/img/arrow-previous.png), 22%, 30%);
+    @media (max-width: 1139px) {
+      left: calc(100% - 50% - 60px); 
+    }
+  }
+  .slick-next {
+    @include slick-prev-next(calc(100% - 37px), url(/img/arrow-next.png), 23%, 40%);
+    @media (max-width: 1139px) {
+      left: calc(100% - 50% + 60px); 
+    }
+  }
+  .slick-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -80px;
+    right: 47px;
+    @media (max-width: 1139px) {
+      top: 512px;
+      right: calc(100% - 50% - 33px);
+    }
+    li button {
+      font-size: 0;
+    }
+    li.slick-active button {
+      @include font(var(--fontG), var(--text-color), 400, 120%, none, 16px, 0, 120%);
+      background-color: var(--white-color);
+      &::after {
+      content: " / 2";
+      @media (max-width: 1140px) {
+        content: " / 3";
+      }
+      @media (max-width: 790px) {
+        content: " / 6";
+      }
+      @include font(var(--fontG), var(--text-color), 400, 120%, none, 16px, 0, 120%);
+      opacity: 0.6;
+      }
+    }
+  } 
+}
+
+.footer {
+  background-color: var(--footer-backround);
+  padding: 40px 72px 72px 72px;
+  @media (max-width: 768px) {
+    padding: 40px 20px 60px 20px;
+  }
+  &__p {
+    @include font(var(--fontG), var(--text-color), 400, none, 120%, 16px, 0, 120%);
+    opacity: 0.6;
+  }
+}
