@@ -94,7 +94,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body {
-  /*overflow-x: hidden;*/
+  overflow-x: hidden;
 }
 
 .container {
@@ -637,9 +637,9 @@ body {
   margin-top: 46px;
   display: -ms-grid;
   display: grid;
- /* -ms-grid-columns: (auto)[2];*/
+  /*-ms-grid-columns: (auto)[2];*/
   grid-template-columns: repeat(2, auto);
- /* -ms-grid-rows: (auto)[5];*/
+  /*-ms-grid-rows: (auto)[5];*/
   grid-template-rows: repeat(5, auto);
 }
 .info-content-items > *:nth-child(1) {
