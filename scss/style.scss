@@ -97,8 +97,12 @@
   position: absolute;
   top: $t;
   font-size: $fs;
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
+  @media (max-width: 1139px) {
+    width: 36px;
+    height: 36px;
+  }
   border-radius: 50%;
   background-color: var(--text-color);
   &:hover {
@@ -154,7 +158,7 @@ body {
       }
       &::before {
         content: "";
-        background-image: url(/img/Vector.png);
+        background-image: url(../img/Vector.png);
         background-repeat: repeat;
         background-size: contain;
         width: 91px;
@@ -331,6 +335,10 @@ body {
       width: 335px;
       top: 25%;
     }
+    @media (max-width: 356px) {
+      top: 32.5%;
+      width: 300px;
+    }
   }
 }
 .info-content {
@@ -445,9 +453,9 @@ body {
     @media (max-width: 584px) {
       top: 170px;
     }
-    @media (max-width: 320px) {
+    @media (max-width: 374px) {
       width: 280px;
-      top: 190px;
+      top: 160px;
     }
   }
   .slider {
@@ -465,8 +473,7 @@ body {
     'sixth seventh seventh';
   }
   &__item {
-    background-image: url(/img/frame.png);
-    background-color: rgba(238,228,211,0.9);
+    background-image: url(../img/frame.png);
     padding: 20px 20px 20px 72px;
   }
   &__item:nth-child(1) {
@@ -520,14 +527,14 @@ body {
         cursor: inherit;
       }
       .slick-prev {
-        @include slick-prev-next(calc(50% - 90px), url(/img/arrow-previous.png), 22%, 30%);
+        @include slick-prev-next(calc(50% - 90px), url(../img/arrow-previous.png), 22%, 30%);
       }
       .slick-next {
-        @include slick-prev-next(calc(50% + 55px), url(/img/arrow-next.png), 23%, 40%);
+        @include slick-prev-next(calc(50% + 55px), url(../img/arrow-next.png), 23%, 40%);
       }
     }
     .slider__item {
-      background-image: url(/img/frame.png);
+      background-image: url(../img/frame.png);
       width: 335px;
       height: 350px;
       padding: 62px 5px 0 72px;
@@ -597,9 +604,6 @@ body {
     position: relative;
     height: 473px;
     margin-bottom: 140px;
-    @media (max-width: 790px) {
-      margin-bottom: 186px;
-    }
   }
   &__item {
     display: flex;
@@ -632,21 +636,24 @@ body {
     }
   }
   .slick-arrow {
-    @include click-arrow(-90px, 0);
+    @include click-arrow(-95px, 0);
     @media (max-width: 1139px) {
       top: calc(100% + 30px);
     }
+    @media (max-width: 374px) {
+      top: 470px;
+    }
   }
   .slick-prev {
-    @include slick-prev-next(calc(100% - 130px), url(/img/arrow-previous.png), 22%, 30%);
+    @include slick-prev-next(calc(100% - 140px), url(../img/arrow-previous.png), 22%, 30%);
     @media (max-width: 1139px) {
-      left: calc(100% - 50% - 60px); 
+      left: calc(100% - 50% - 80px); 
     }
   }
   .slick-next {
-    @include slick-prev-next(calc(100% - 37px), url(/img/arrow-next.png), 23%, 40%);
+    @include slick-prev-next(calc(100% - 37px), url(../img/arrow-next.png), 23%, 40%);
     @media (max-width: 1139px) {
-      left: calc(100% - 50% + 60px); 
+      left: calc(100% - 50% + 50px); 
     }
   }
   .slick-dots {
@@ -654,11 +661,14 @@ body {
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: -80px;
-    right: 47px;
+    top: -82px;
+    right: 49px;
     @media (max-width: 1139px) {
       top: 512px;
-      right: calc(100% - 50% - 33px);
+      right: calc(100% - 50% - 20px);
+    }
+    @media (max-width: 374px) {
+      top: 480px;
     }
     li button {
       font-size: 0;
