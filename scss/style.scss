@@ -122,7 +122,7 @@
 }
 
 body {
-  overflow-x: hidden;
+  /*overflow-x: hidden;*/
 }
 
 .container {
@@ -145,7 +145,13 @@ body {
   background-size: contain;
   height: 710px;
   @media (max-width: 767px) {
-    height: 750px;
+    height: 747px;
+  }
+  @media (max-width: 343px) {
+    height: 758px;
+  }
+  @media (max-width: 321px) {
+    height: 733px;
   }
   &__logo {
     .logo-p {
@@ -234,8 +240,14 @@ body {
     top: 0;
     left: -370px;
     @media (max-width: 767px) {
-      top: 440px;
+      top: 437px;
       left: -370px;
+    }
+    @media (max-width: 343px) {
+      top: 449px;
+    }
+    @media (max-width: 321px) {
+      top: 423px;
     }
     .img-city {
       max-width: 1950px;

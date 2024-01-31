@@ -94,7 +94,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body {
-  overflow-x: hidden;
+  /*overflow-x: hidden;*/
 }
 
 .container {
@@ -130,7 +130,17 @@ body {
 }
 @media (max-width: 767px) {
   .header {
-    height: 750px;
+    height: 747px;
+  }
+}
+@media (max-width: 343px) {
+  .header {
+    height: 758px;
+  }
+}
+@media (max-width: 321px) {
+  .header {
+    height: 733px;
   }
 }
 .header__logo .logo-p {
@@ -387,8 +397,18 @@ body {
 }
 @media (max-width: 767px) {
   .header__img {
-    top: 440px;
+    top: 437px;
     left: -370px;
+  }
+}
+@media (max-width: 343px) {
+  .header__img {
+    top: 449px;
+  }
+}
+@media (max-width: 321px) {
+  .header__img {
+    top: 423px;
   }
 }
 .header__img .img-city {
@@ -617,7 +637,7 @@ body {
   margin-top: 46px;
   display: -ms-grid;
   display: grid;
-  /*-ms-grid-columns: (auto)[2];*/
+ /* -ms-grid-columns: (auto)[2];*/
   grid-template-columns: repeat(2, auto);
  /* -ms-grid-rows: (auto)[5];*/
   grid-template-rows: repeat(5, auto);
@@ -666,7 +686,7 @@ body {
   .info-content-items {
     /*-ms-grid-columns: (auto)[1];*/
     grid-template-columns: repeat(1, auto);
-    /*-ms-grid-rows: (auto)[10];*/
+   /* -ms-grid-rows: (auto)[10];*/
     grid-template-rows: repeat(10, auto);
   }
   .info-content-items > *:nth-child(1) {
