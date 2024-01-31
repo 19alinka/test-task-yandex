@@ -114,7 +114,7 @@ body {
   font-weight: 400;
   line-height: 120%;
   text-transform: none;
-  font-size: calc(20px + 0 * (100vw / 1366));
+  font-size: calc(20px + 0 * 0.0732064422vw);
 }
 @media (max-width: 767px) {
   .blue-text {
@@ -124,7 +124,7 @@ body {
 }
 
 .header {
-  background: url(/img/frame.png);
+  background-image: url(../img/frame.png);
   background-size: contain;
   height: 710px;
 }
@@ -145,7 +145,7 @@ body {
   font-weight: 700;
   line-height: 17.983px;
   text-transform: uppercase;
-  font-size: calc(14.418px + 2.233 * (100vw / 1366));
+  font-size: calc(14.418px + 2.233 * 0.0732064422vw);
   padding-top: 26px;
 }
 @media (max-width: 767px) {
@@ -198,7 +198,7 @@ body {
   font-weight: 400;
   line-height: 110%;
   text-transform: uppercase;
-  font-size: calc(36px + 24 * (100vw / 1366));
+  font-size: calc(36px + 24 * 0.0732064422vw);
 }
 @media (min-width: 1367px) {
   .header__content .content-p {
@@ -228,7 +228,7 @@ body {
   font-weight: 400;
   line-height: 130%;
   text-transform: none;
-  font-size: calc(18px + 0 * (100vw / 1366));
+  font-size: calc(18px + 0 * 0.0732064422vw);
   text-align: center;
   margin-top: 24px;
 }
@@ -273,7 +273,7 @@ body {
   width: 263px;
   height: 72px;
   background: var(--background-color);
-  border: none;
+  border: var(none);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -288,7 +288,7 @@ body {
   font-weight: 500;
   line-height: 130%;
   text-transform: none;
-  font-size: calc(16px + 0 * (100vw / 1366));
+  font-size: calc(16px + 0 * 0.0732064422vw);
 }
 @media (max-width: 767px) {
   .header__button .button1 {
@@ -341,7 +341,7 @@ body {
   font-weight: 500;
   line-height: 130%;
   text-transform: none;
-  font-size: calc(16px + 0 * (100vw / 1366));
+  font-size: calc(16px + 0 * 0.0732064422vw);
 }
 @media (max-width: 767px) {
   .header__button .button2 {
@@ -409,7 +409,7 @@ body {
   font-weight: 400;
   line-height: 110%;
   text-transform: uppercase;
-  font-size: calc(16px + 6 * (100vw / 1366));
+  font-size: calc(16px + 6 * 0.0732064422vw);
 }
 @media (max-width: 767px) {
   .marquee {
@@ -514,7 +514,7 @@ body {
   font-weight: 400;
   line-height: 135%;
   text-transform: uppercase;
-  font-size: calc(28px + 8 * (100vw / 1366));
+  font-size: calc(28px + 8 * 0.0732064422vw);
 }
 @media (max-width: 767px) {
   .p {
@@ -611,9 +611,9 @@ body {
   margin-top: 46px;
   display: -ms-grid;
   display: grid;
-  /*-ms-grid-columns: (auto)[2];*/
+  -ms-grid-columns: (auto)[2];
   grid-template-columns: repeat(2, auto);
-  /*-ms-grid-rows: (auto)[5];*/
+  -ms-grid-rows: (auto)[5];
   grid-template-rows: repeat(5, auto);
 }
 .info-content-items > *:nth-child(1) {
@@ -658,9 +658,9 @@ body {
 }
 @media (max-width: 768px) {
   .info-content-items {
-    /*-ms-grid-columns: (auto)[1];*/
+    -ms-grid-columns: (auto)[1];
     grid-template-columns: repeat(1, auto);
-    /*-ms-grid-rows: (auto)[10];*/
+    -ms-grid-rows: (auto)[10];
     grid-template-rows: repeat(10, auto);
   }
   .info-content-items > *:nth-child(1) {
@@ -710,7 +710,7 @@ body {
   font-weight: 400;
   line-height: 120%;
   text-transform: none;
-  font-size: calc(20px + 0 * (100vw / 1366));
+  font-size: calc(20px + 0 * 0.0732064422vw);
   padding: 16px 0px;
   border-bottom: var(--border-table);
   border-right: var(--border-table);
@@ -734,7 +734,7 @@ body {
   font-weight: 600;
   line-height: 120%;
   text-transform: none;
-  font-size: calc(20px + 0 * (100vw / 1366));
+  font-size: calc(20px + 0 * 0.0732064422vw);
   padding: 16px 16px;
   border-bottom: var(--border-table);
 }
@@ -779,7 +779,7 @@ body {
   font-weight: 400;
   line-height: 120%;
   text-transform: uppercase;
-  font-size: calc(36px + 28 * (100vw / 1366));
+  font-size: calc(36px + 28 * 0.0732064422vw);
   width: 850px;
 }
 @media (min-width: 1367px) {
@@ -789,7 +789,7 @@ body {
     font-weight: 400;
     line-height: 120%;
     text-transform: uppercase;
-    font-size: calc(64px + 0 * (100vw / 1366));
+    font-size: calc(64px + 0 * 0.0732064422vw);
   }
 }
 @media (min-width: 1367px) and (max-width: 767px) {
@@ -886,7 +886,7 @@ body {
   font-weight: 600;
   line-height: 120%;
   text-transform: none;
-  font-size: calc(20px + 0 * (100vw / 1366));
+  font-size: calc(20px + 0 * 0.0732064422vw);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -922,7 +922,7 @@ body {
   font-weight: 600;
   line-height: 120%;
   text-transform: none;
-  font-size: calc(20px + 0 * (100vw / 1366));
+  font-size: calc(20px + 0 * 0.0732064422vw);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -959,7 +959,7 @@ body {
   font-weight: 600;
   line-height: 120%;
   text-transform: none;
-  font-size: calc(20px + 0 * (100vw / 1366));
+  font-size: calc(20px + 0 * 0.0732064422vw);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -995,7 +995,7 @@ body {
   font-weight: 600;
   line-height: 120%;
   text-transform: none;
-  font-size: calc(20px + 0 * (100vw / 1366));
+  font-size: calc(20px + 0 * 0.0732064422vw);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1031,7 +1031,7 @@ body {
   font-weight: 600;
   line-height: 120%;
   text-transform: none;
-  font-size: calc(20px + 0 * (100vw / 1366));
+  font-size: calc(20px + 0 * 0.0732064422vw);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1067,7 +1067,7 @@ body {
   font-weight: 600;
   line-height: 120%;
   text-transform: none;
-  font-size: calc(20px + 0 * (100vw / 1366));
+  font-size: calc(20px + 0 * 0.0732064422vw);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1105,7 +1105,7 @@ body {
   font-weight: 600;
   line-height: 120%;
   text-transform: none;
-  font-size: calc(20px + 0 * (100vw / 1366));
+  font-size: calc(20px + 0 * 0.0732064422vw);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1134,7 +1134,7 @@ body {
   font-weight: 500;
   line-height: 120%;
   text-transform: none;
-  font-size: calc(20px + 0 * (100vw / 1366));
+  font-size: calc(20px + 0 * 0.0732064422vw);
 }
 @media (max-width: 767px) {
   .stages-p {
@@ -1221,7 +1221,7 @@ body {
     font-weight: 500;
     line-height: 120%;
     text-transform: none;
-    font-size: calc(18px + 0 * (100vw / 1366));
+    font-size: calc(18px + 0 * 0.0732064422vw);
     width: 80%;
     margin-bottom: 28px;
     position: relative;
@@ -1241,7 +1241,7 @@ body {
     font-weight: 600;
     line-height: 120%;
     text-transform: none;
-    font-size: calc(20px + 0 * (100vw / 1366));
+    font-size: calc(20px + 0 * 0.0732064422vw);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1273,7 +1273,7 @@ body {
     font-weight: 600;
     line-height: 120%;
     text-transform: none;
-    font-size: calc(20px + 0 * (100vw / 1366));
+    font-size: calc(20px + 0 * 0.0732064422vw);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1305,7 +1305,7 @@ body {
     font-weight: 600;
     line-height: 120%;
     text-transform: none;
-    font-size: calc(20px + 0 * (100vw / 1366));
+    font-size: calc(20px + 0 * 0.0732064422vw);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1337,7 +1337,7 @@ body {
     font-weight: 600;
     line-height: 120%;
     text-transform: none;
-    font-size: calc(20px + 0 * (100vw / 1366));
+    font-size: calc(20px + 0 * 0.0732064422vw);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1369,7 +1369,7 @@ body {
     font-weight: 600;
     line-height: 120%;
     text-transform: none;
-    font-size: calc(20px + 0 * (100vw / 1366));
+    font-size: calc(20px + 0 * 0.0732064422vw);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1401,7 +1401,7 @@ body {
     font-weight: 600;
     line-height: 120%;
     text-transform: none;
-    font-size: calc(20px + 0 * (100vw / 1366));
+    font-size: calc(20px + 0 * 0.0732064422vw);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1433,7 +1433,7 @@ body {
     font-weight: 600;
     line-height: 120%;
     text-transform: none;
-    font-size: calc(20px + 0 * (100vw / 1366));
+    font-size: calc(20px + 0 * 0.0732064422vw);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1497,7 +1497,7 @@ body {
   font-weight: 400;
   line-height: 120%;
   text-transform: uppercase;
-  font-size: calc(36px + 28 * (100vw / 1366));
+  font-size: calc(36px + 28 * 0.0732064422vw);
   margin-bottom: 31px;
 }
 @media (min-width: 1367px) {
@@ -1507,7 +1507,7 @@ body {
     font-weight: 400;
     line-height: 120%;
     text-transform: uppercase;
-    font-size: calc(64px + 0 * (100vw / 1366));
+    font-size: calc(64px + 0 * 0.0732064422vw);
   }
 }
 @media (min-width: 1367px) and (max-width: 767px) {
@@ -1563,7 +1563,7 @@ body {
   font-weight: 600;
   line-height: 120%;
   text-transform: none;
-  font-size: calc(24px + 0 * (100vw / 1366));
+  font-size: calc(24px + 0 * 0.0732064422vw);
   margin: 22px 0 6px 0;
 }
 @media (max-width: 767px) {
@@ -1578,7 +1578,7 @@ body {
   font-weight: 400;
   line-height: 120%;
   text-transform: none;
-  font-size: calc(20px + 0 * (100vw / 1366));
+  font-size: calc(20px + 0 * 0.0732064422vw);
   opacity: 0.6;
   margin-bottom: 20px;
 }
@@ -1676,7 +1676,7 @@ body {
   font-weight: 400;
   line-height: 120%;
   text-transform: none;
-  font-size: calc(16px + 0 * (100vw / 1366));
+  font-size: calc(16px + 0 * 0.0732064422vw);
   background-color: var(--white-color);
 }
 @media (max-width: 767px) {
@@ -1692,7 +1692,7 @@ body {
   font-weight: 400;
   line-height: 120%;
   text-transform: none;
-  font-size: calc(16px + 0 * (100vw / 1366));
+  font-size: calc(16px + 0 * 0.0732064422vw);
   opacity: 0.6;
 }
 @media (max-width: 1140px) {
@@ -1725,9 +1725,9 @@ body {
   font-family: var(--fontG);
   color: var(--text-color);
   font-weight: 400;
-  line-height: none;
-  text-transform: 120%;
-  font-size: calc(16px + 0 * (100vw / 1366));
+  line-height: 120%;
+  text-transform: none;
+  font-size: calc(16px + 0 * 0.0732064422vw);
   opacity: 0.6;
 }
 @media (max-width: 767px) {

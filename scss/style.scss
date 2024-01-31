@@ -137,7 +137,7 @@ body {
 
 //Заголовок
 .header {
-  background: url(/img/frame.png);
+  background-image: url(../img/frame.png);
   background-size: contain;
   height: 710px;
   @media (max-width: 767px) {
@@ -688,7 +688,7 @@ body {
     padding: 40px 20px 60px 20px;
   }
   &__p {
-    @include font(var(--fontG), var(--text-color), 400, none, 120%, 16px, 0, 120%);
+    @include font(var(--fontG), var(--text-color), 400, 120%, none, 16px, 0, 120%);
     opacity: 0.6;
   }
 }
